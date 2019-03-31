@@ -15,6 +15,10 @@
     "reducer"
   ],
   "author": "Jurica Smirčić (jure@lemonmint.dev)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsmircic/typescript-fsa-immer.git"
+  },
   "license": "MIT",
   "scripts": {
     "build": "yarn run clean && tsc -p tsconfig.json",
