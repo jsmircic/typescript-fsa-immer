@@ -4,9 +4,9 @@ Redux reducer wrapped with immer produce for immutability.
 
 ### Introduction
 
-Built on top of excellent [typescript-fsa](https://github.com/aikoven/typescript-fsa), fantastic [immer](https://github.com/mweststrate/immer), and inspired by the [typescript-fsa-reducers](https://github.com/dphilipson/typescript-fsa-reducers) library. With a goal to provide a fluent syntax for defining redux reducers with a "in the box" immutabilty provided by the immer "produce" function.
+Built on top of excellent [typescript-fsa](https://github.com/aikoven/typescript-fsa), fantastic [immer](https://github.com/mweststrate/immer), and inspired by the [typescript-fsa-reducers](https://github.com/dphilipson/typescript-fsa-reducers) library. With a goal to provide a fluent syntax for defining redux reducers with an "in the box" immutability provided by the immer "produce" function.
 
-The classic aproach to write a reducer with immer for immutability would look something like this:
+The classic approach to write a reducer with immer for immutability would look something like this:
 
 ```typescript
 import {produce} from 'immer'
@@ -35,7 +35,7 @@ const decrement = actionCreator("DECREMENT");
 const reset = actionCreator("RESET");
 const setCounter = actionCreator<number>("SET_VALUE");
 
-/*case handlers, the state here can be mutated safely!*/
+/*case handlers, the state here can be mutated safely! */
 const onIncrement = state => state.counter++;
 const onDecrement = state => state.counter--;
 const onReset = state => (state.counter = 0);
@@ -53,12 +53,12 @@ const reducer = immerReducer(initialState)
   .case(setCounter, onSetCounter);
 ```
 
-Reducer case handlers are wrapped with a immer "produce". The state object passed to the case handler is a immer "draft". The original state object is never mutated.
+Reducer case handlers are wrapped with a immer "produce". The state object passed to the case handler is an immer "draft". The original state object is never mutated.
 
 ## Installation
 
-    yarn add typescript-fsa-immer
+    yarn add typescript-fsa-immer immer typescript-fsa
 
 or
 
-    npm install typescript-fsa-immer --save
+    npm install typescript-fsa-immer immer typescript-fsa --save
