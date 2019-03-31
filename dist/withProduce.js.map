@@ -1,0 +1,1 @@
+{"version":3,"file":"withProduce.js","sourceRoot":"","sources":["../src/withProduce.ts"],"names":[],"mappings":";;;AAAA,wDAA4B;AAS5B,SAAgB,WAAW,CACzB,OAAuD;IAEvD,OAAO,UAAC,KAAa,EAAE,OAAiB;QACtC,OAAO,eAAO,CAAC,KAAK,EAAE,UAAA,KAAK,IAAI,OAAA,OAAO,CAAC,KAAY,EAAE,OAAO,CAAC,EAA9B,CAA8B,CAAC,CAAC;IACjE,CAAC,CAAC;AACJ,CAAC;AAND,kCAMC"}

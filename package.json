@@ -1,0 +1,44 @@
+{
+  "name": "typescript-fsa-immer",
+  "version": "0.0.5",
+  "description": "typesafe redux reducers with 'immer' immutability in the box.",
+  "main": "dist/index.js",
+  "types": "dist/index",
+  "files": [
+    "dist/"
+  ],
+  "keywords": [
+    "redux",
+    "immer",
+    "typescript",
+    "action",
+    "reducer"
+  ],
+  "author": "Jurica Smirčić (jure@lemonmint.dev)",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn run clean && tsc -p tsconfig.json",
+    "clean": "rimraf dist/*",
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "immer": "*",
+    "redux": "*",
+    "typescript-fsa": "*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/redux": "^3.6.0",
+    "babel-jest": "^24.5.0",
+    "immer": "^2.1.4",
+    "jest": "^24.5.0",
+    "rimraf": "^2.6.3",
+    "typescript": "^3.4.1",
+    "typescript-fsa": "^3.0.0-beta-2"
+  },
+  "dependencies": {
+    "@types/jest": "^24.0.11"
+  }
+}
