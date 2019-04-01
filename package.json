@@ -1,6 +1,6 @@
 {
   "name": "typescript-fsa-immer",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "typesafe redux reducers with 'immer' immutability in the box.",
   "main": "dist/index.js",
   "types": "dist/index",
