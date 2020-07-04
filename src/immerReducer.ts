@@ -26,8 +26,7 @@ export function immerReducer<TState>(
     return reducer;
   };
 
-  const reducer = (state: TState, action: AnyAction) => {
-    if (!state) return initialState;
+  const reducer = (state: TState = initialState, action: AnyAction) => {
     let caseEntry = cases[action.type];
 
     if (caseEntry) {

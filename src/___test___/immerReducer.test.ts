@@ -30,3 +30,8 @@ test("reducer result is a different instance", () => {
   const result = reducer(testState, decrement());
   expect(result).not.toBe(testState);
 });
+
+test("initial state is used if input state is undefined", () => {
+  const result = reducer(undefined, decrement());
+  expect(result.counter).toBe(-1);
+});
