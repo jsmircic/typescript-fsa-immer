@@ -12,9 +12,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": false,
     "noImplicitReturns": true,
-    "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "outDir": "dist",
@@ -22,7 +20,6 @@
     "removeComments": true,
     "sourceMap": true,
     "strict": true,
-    "strictNullChecks": true,
     "stripInternal": true,
     "target": "es5"
   }

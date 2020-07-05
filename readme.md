@@ -25,7 +25,7 @@ Using this library, redux reducer is defined like this:
 
 ```typescript
 import { immerReducer } from "typescript-fsa-immer";
-import { actionCreatorFactory } from "typescript-fsa";
+import { actionCreatorFactory, Action } from "typescript-fsa";
 
 const actionCreator = actionCreatorFactory("COUNTER");
 
@@ -35,13 +35,20 @@ const decrement = actionCreator("DECREMENT");
 const reset = actionCreator("RESET");
 const setCounter = actionCreator<number>("SET_VALUE");
 
+type State = {
+  counter: number
+}
+
 /*case handlers, the state here can be mutated safely! */
-const onIncrement = state => state.counter++;
-const onDecrement = state => state.counter--;
-const onReset = state => (state.counter = 0);
+const onIncrement = (state: State) => { state.counter++ };
+const onDecrement = (state: State) => { state.counter-- };
+const onReset = (state: State, action: Action) => { 
+  console.log(`counter has been refreshed by ${action.meta}`)
+  state.counter = 0 
+};
 
 /*the payload for this action creator is strongly typed, must be a number or TS will complain*/
-const onSetCounter = (state, payload: number) => (state.counter = payload);
+const onSetCounter = (state: State, payload: number) => { state.counter = payload };
 
 /* Compose the reducer, define case handler for every action creator.
  * Everything is strongly typed and typesafe!
@@ -49,7 +56,7 @@ const onSetCounter = (state, payload: number) => (state.counter = payload);
 const reducer = immerReducer(initialState)
   .case(increment, onIncrement)
   .case(decrement, onDecrement)
-  .case(reset, onReset)
+  .caseWithAction(reset, onReset)
   .case(setCounter, onSetCounter);
 ```
 
